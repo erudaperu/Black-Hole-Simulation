@@ -1,2 +1,0 @@
-C:/Users/Eren/Desktop/Black Hole Simulation/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Eren/Desktop/Black Hole Simulation/build/CMakeFiles/ZERO_CHECK.dir
