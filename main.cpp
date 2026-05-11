@@ -77,9 +77,11 @@ int main(){
     float pi = 3.14159265f;
     float horizonRadius = 5;
     Vec2 center = {0,0};
-    Body body = {{90,90},{0,0}};
+    Body body = {{90,90},{-1,-1}};
     
     for(int i=0; i<1000; i++){
+        float timeStep = 0.1f;
+        body.position+=body.velocity;
         Vec2 directionVector = center - body.position;
         float distance = directionVector.length();
         Vec2 directionVectorNormalized = directionVector.normalized();
@@ -88,10 +90,9 @@ int main(){
         float gravityStrength = gravity / (distance * distance + softening);
         Vec2 acceleration = directionVectorNormalized*gravityStrength;
         body.velocity+= acceleration;
-        body.position+=body.velocity;
 
         if(distance < horizonRadius){
-            std::cout << "body consumed." << std::endl;
+            std::cout << "body consumed at distance: " << distance << std::endl;
             return 0;
         }
 
